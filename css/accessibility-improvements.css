@@ -1,0 +1,91 @@
+/*
+ * Accessibility Improvements
+ * Additional styles to improve website accessibility while maintaining original visual design
+ */
+
+/* Form accessibility improvements while maintaining visual design */
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* For standard accessible structure (label before input) */
+.contact-form .form-group:not(.flex-column-reverse) {
+  margin: 0 0 2rem;
+}
+
+.contact-form .form-group:not(.flex-column-reverse) .webform-label {
+  order: 1;
+  margin-bottom: 8px;
+  transform: none !important;
+  font-size: 14px;
+  position: static;
+  color: var(--dark-color);
+  font-weight: var(--font-weight-normal);
+}
+
+.contact-form .form-group:not(.flex-column-reverse) .form-control {
+  order: 2;
+}
+
+/* Preserve the original floating label effect for flex-column-reverse groups */
+.contact-form .form-group.flex-column-reverse .form-control:placeholder-shown + .webform-label {
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+.contact-form .form-group.flex-column-reverse .form-control:not(:placeholder-shown) + .webform-label,
+.contact-form .form-group.flex-column-reverse .form-control:focus + .webform-label {
+  transform: translate(0, 0) scale(1);
+}
+
+/* Ensure consistent bottom margin for all form groups */
+.contact-form .form-group,
+.contact-form .form-group.flex-column-reverse {
+  margin-bottom: 2rem;
+}
+
+/* Adjust <h2> styling to match original <h3> styling where needed */
+.testimonials h2.mb-5,
+.faq h2.mb-5,
+.contact h2.my-4 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+/* Adjust <h3> styling for testimonial names to match original <h6> */
+.testimonials-info h3.mb-0 {
+  font-size: var(--h6-font-size);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0;
+}
+
+/* Ensure proper spacing for label-first form structure */
+.contact-form .form-group:not(.flex-column-reverse) .webform-label + .form-control {
+  margin-top: 0.25rem;
+}
+
+/* Add skip to content link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--dark-color);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Add focus styles for better keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
