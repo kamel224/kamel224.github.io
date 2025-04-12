@@ -99,7 +99,7 @@ select:focus {
 
 /* Button contrast improvements */
 .custom-btn,
-.btn {
+.btn:not(.btn-link) {
     background-color: #0056b3 !important; /* Stronger blue for better contrast */
     color: #ffffff !important; /* White text on blue background */
     border: 1px solid #0056b3 !important;
@@ -114,7 +114,9 @@ select:focus {
 /* Accordion button improvements */
 .card-header .btn-link {
     color: #0056b3 !important; /* Darker blue for accordion buttons */
+    background-color: transparent !important; /* 透明背景 */
     font-weight: 500; /* Slightly bolder font */
+    text-decoration: none !important;
 }
 
 /* Improve social media icon contrast */
