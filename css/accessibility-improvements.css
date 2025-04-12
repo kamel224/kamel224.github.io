@@ -89,3 +89,79 @@ select:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
+
+/* CONTRAST IMPROVEMENTS */
+
+/* Improve navigation link contrast */
+.navbar-nav .nav-link {
+    color: #404040 !important; /* Darker than original to improve contrast */
+}
+
+/* Button contrast improvements */
+.custom-btn,
+.btn {
+    background-color: #0056b3 !important; /* Stronger blue for better contrast */
+    color: #ffffff !important; /* White text on blue background */
+    border: 1px solid #0056b3 !important;
+}
+
+/* Improve link button contrast */
+.btn-link {
+    color: #0056b3 !important; /* Darker blue for text links */
+    text-decoration: underline; /* Underline for better visibility */
+}
+
+/* Accordion button improvements */
+.card-header .btn-link {
+    color: #0056b3 !important; /* Darker blue for accordion buttons */
+    font-weight: 500; /* Slightly bolder font */
+}
+
+/* Improve social media icon contrast */
+.social-links a {
+    color: #0056b3 !important; /* Use blue instead of lighter colors */
+    background-color: rgba(255, 255, 255, 0.8) !important; /* Light background for contrast */
+    border-radius: 50%; /* Circular background */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+/* Enhanced focus styles with higher contrast */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #0056b3 !important; /* Thicker outline with blue color */
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000000 !important;
+        background: #ffffff !important;
+    }
+    
+    a, button.btn-link {
+        color: #0000EE !important;
+    }
+    
+    a:visited {
+        color: #551A8B !important;
+    }
+    
+    .navbar, .card-header, .testimonials, .contact {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    .custom-btn {
+        background: #000000 !important;
+        color: #ffffff !important;
+        border: 2px solid #000000 !important;
+    }
+}
