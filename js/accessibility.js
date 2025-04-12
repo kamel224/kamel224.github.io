@@ -31,4 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (submitButton) {
         submitButton.setAttribute('aria-label', 'Submit your contact information');
     }
+    // Improve carousel controls accessibility
+    const carouselPrev = document.querySelector('.owl-prev');
+    const carouselNext = document.querySelector('.owl-next');
+    
+    if (carouselPrev) {
+        carouselPrev.setAttribute('aria-label', 'Previous testimonial');
+    }
+    
+    if (carouselNext) {
+        carouselNext.setAttribute('aria-label', 'Next testimonial');
+    }
+    
+    // Add role attributes to carousel
+    const carousel = document.querySelector('.owl-carousel');
+    if (carousel) {
+        carousel.setAttribute('role', 'region');
+        carousel.setAttribute('aria-label', 'Customer testimonials carousel');
+        carousel.setAttribute('aria-roledescription', 'carousel');
+        
+        // Add roles to carousel items
+        const carouselItems = carousel.querySelectorAll('.item');
+        carouselItems.forEach(function(item) {
+            item.setAttribute('role', 'group');
+            item.setAttribute('aria-roledescription', 'slide');
+        });
+    }
 });
