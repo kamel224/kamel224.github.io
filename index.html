@@ -46,14 +46,20 @@
      <link rel="preload" href="js/jquery.min.js" as="script">
      <link rel="preload" href="js/bootstrap.min.js" as="script">
      
-     <!-- Original CSS references -->
+     <!-- Keep normal loading for main CSS files that are critical for above-the-fold content -->
      <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/all.min.css">
-     <link rel="stylesheet" href="css/owl.carousel.min.css">
-     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-     <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/tooplate-ben-resume-style.css">
+     
+     <!-- Non-critical CSS files with non-blocking loading technique -->
+     <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'">
+     <noscript><link rel="stylesheet" href="css/all.min.css"></noscript>
+     
+     <link rel="stylesheet" href="css/owl.carousel.min.css" media="print" onload="this.media='all'">
+     <noscript><link rel="stylesheet" href="css/owl.carousel.min.css"></noscript>
+     
+     <link rel="stylesheet" href="css/owl.theme.default.min.css" media="print" onload="this.media='all'">
+     <noscript><link rel="stylesheet" href="css/owl.theme.default.min.css"></noscript>
+
 </head>
 
 <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
